@@ -33,11 +33,11 @@ def temperatureRPi3(sid,temp):
     print('temperatureRPi3 =', sid,temp)
 
 @sio.on('monitordata')
-def monitordata(sid,cpu,mem_info,disk_info,cpu_temp):
-    print('temperatureRPi3 =', sid,cpu_temp)
-    print("CPU Info–> ", cpu)
-    print("Memory Info–>", mem_info)
-    print("Disk Info–>", disk_info)
+def monitordata(sid,data):#cpu,mem_info,disk_info,cpu_temp
+    print('temperatureRPi3 =', sid,data[3])
+    print("CPU Info–> ", data[0])
+    print("Memory Info–>", data[1])
+    print("Disk Info–>", data[2])
 
 @sio.on('CPU-Info3')
 def CPU(sid,load):

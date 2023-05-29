@@ -41,7 +41,7 @@ def my_background_task():
         # sio.emit("CPU-Info3–> ", cpu)
         # sio.emit("Memory-Info3–>", mem_info)
         # sio.emit("Disk-Info3–>", disk_info)
-        sio.emit('monitordata', cpu,mem_info,disk_info,cpu_temp)
+        sio.emit('monitordata', [cpu,mem_info,disk_info,cpu_temp])
         print("CPU Info–> ", cpu)
         print("Memory Info–>", mem_info)
         print("Disk Info–>", disk_info)
