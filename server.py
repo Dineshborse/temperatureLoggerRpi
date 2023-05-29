@@ -21,24 +21,24 @@ def disconnect(sid):
     print('disconnect ', sid)
 
 @sio.on('temperatureRPi1')
-def disconnect(sid,temp):
+def temperatureRPi1(sid,temp):
     print('temperatureRPi1 =', sid,temp)
 
 @sio.on('temperatureRPi2')
-def disconnect(sid,temp):
+def temperatureRPi2(sid,temp):
     print('temperatureRPi3 =', sid,temp)
 
 @sio.on('temperatureRPi3')
-def disconnect(sid,temp):
+def temperatureRPi3(sid,temp):
     print('temperatureRPi3 =', sid,temp)
 @sio.on('CPU-Info3')
-def disconnect(sid,temp):
+def CPU(sid,temp):
     print('CPU Info3 =', sid,temp)
 @sio.on('Memory-Info3')
-def disconnect(sid,temp):
+def Memory(sid,temp):
     print('Memory-Info3 =', sid,temp)
 @sio.on('Disk-Info3')
-def disconnect(sid,temp):
+def Disk(sid,temp):
     print('Disk-Info3 =', sid,temp)
 
 
