@@ -31,6 +31,16 @@ def disconnect(sid,temp):
 @sio.on('temperatureRPi3')
 def disconnect(sid,temp):
     print('temperatureRPi3 =', sid,temp)
+@sio.on('CPU-Info3')
+def disconnect(sid,temp):
+    print('CPU Info3 =', sid,temp)
+@sio.on('Memory-Info3')
+def disconnect(sid,temp):
+    print('Memory-Info3 =', sid,temp)
+@sio.on('Disk-Info3')
+def disconnect(sid,temp):
+    print('Disk-Info3 =', sid,temp)
+
 
 def hello_world(env, start_response):
     # start_response('200 OK', [('Content-Type', 'text/plain')])

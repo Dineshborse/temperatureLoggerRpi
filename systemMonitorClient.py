@@ -1,28 +1,10 @@
-import socketio
 import psutil
 import time
 import _thread as thread
-import gpiozero as gz
-
-sio = socketio.Client()
-@sio.on('connect')
-def connect():
-    print('connect ')
-    sio.emit("ping-from-client",["data"])
-    thread.start_new_thread(my_background_task, ())
-
-@sio.on('disconnect')
-def disconnect():
-    print('disconnect ')
-
-@sio.on('pong-from-server')
-def pong_from_server():
-    print('pong-from-server')
 
 def my_background_task():
-    while 1:
-        cpu_temp = gz.CPUTemperature().temperature
-        cpu_temp = round(cpu_temp, 2)
+    while(True):
+        # Get cpu statistics
         cpu = str(psutil.cpu_percent()) + '%'
 
         # Calculate memory information
@@ -38,13 +20,9 @@ def my_background_task():
         free = round(disk.free/1024.0/1024.0/1024.0,1)
         total = round(disk.total/1024.0/1024.0/1024.0,1)
         disk_info = str(free) + 'GB free / ' + str(total) + 'GB total ( ' + str(disk.percent) + '% )'
-        sio.emit("CPU-Info3–> ", cpu)
-        sio.emit("Memory-Info3–>", mem_info)
-        sio.emit("Disk-Info3–>", disk_info)
-        sio.emit('temperatureRPi3', cpu_temp)
+        print("CPU Info–> ", cpu)
+        print("Memory Info–>", mem_info)
+        print("Disk Info–>", disk_info)
         time.sleep(1)
 
-
-sio.connect('http://13.234.208.123:5555',transports=['websocket'])
-
-
+thread.start_new_thread(my_background_task, ())
