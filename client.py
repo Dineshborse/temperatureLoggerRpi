@@ -4,6 +4,8 @@ import time
 import _thread as thread
 import gpiozero as gz
 
+time.sleep(20)
+
 sio = socketio.Client()
 @sio.on('connect')
 def connect():
