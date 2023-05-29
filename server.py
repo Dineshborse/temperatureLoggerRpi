@@ -1,10 +1,10 @@
 from eventlet import wsgi
 import eventlet
-
+import time
 import socketio
-sio = socketio.Server(async_mode='eventlet',cors_allowed_origins='*')
 
-sio = socketio.Server()
+time.sleep(10)
+sio = socketio.Server(async_mode='eventlet',cors_allowed_origins='*')
 app = socketio.WSGIApp(sio)
 
 @sio.on('connect')
