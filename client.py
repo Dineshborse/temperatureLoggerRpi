@@ -47,6 +47,7 @@ def my_background_task():
         print("Disk Info–>", disk_info)
         print("Temperature Info–>", cpu_temp)
         print("")
+        time.sleep(1)
         
 
 sio.connect('http://13.234.208.123:5555',transports=['websocket'])
