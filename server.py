@@ -31,15 +31,25 @@ def temperatureRPi2(sid,temp):
 @sio.on('temperatureRPi3')
 def temperatureRPi3(sid,temp):
     print('temperatureRPi3 =', sid,temp)
+
+@sio.on('monitordata')
+def monitordata(sid,cpu,mem_info,disk_info,cpu_temp):
+    print('temperatureRPi3 =', sid,cpu_temp)
+    print("CPU Info–> ", cpu)
+    print("Memory Info–>", mem_info)
+    print("Disk Info–>", disk_info)
+
 @sio.on('CPU-Info3')
-def CPU(sid,temp):
-    print('CPU Info3 =', sid,temp)
+def CPU(sid,load):
+    print('CPU Info3 =', sid,load)
+
 @sio.on('Memory-Info3')
-def Memory(sid,temp):
-    print('Memory-Info3 =', sid,temp)
+def Memory(sid,memusage):
+    print('Memory-Info3 =', sid,memusage)
+
 @sio.on('Disk-Info3')
-def Disk(sid,temp):
-    print('Disk-Info3 =', sid,temp)
+def Disk(sid,diskusage):
+    print('Disk-Info3 =', sid,diskusage)
 
 
 def hello_world(env, start_response):
