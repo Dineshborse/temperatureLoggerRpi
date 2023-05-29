@@ -1,0 +1,19 @@
+[Unit]
+Description=system info deamon
+#Documentation=
+After=test.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=arm9
+ExecStartPre=
+WorkingDirectory=/home/arm9/temperatureLoggerRpi/
+ExecStart=/bin/bash -c 'cd /home/arm9/temperatureLoggerRpi/ && python3 client.p>
+ExecStartPost=
+ExecStop=
+ExecReload=
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
