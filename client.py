@@ -42,6 +42,9 @@ def my_background_task():
         sio.emit("Memory-Info3–>", mem_info)
         sio.emit("Disk-Info3–>", disk_info)
         sio.emit('temperatureRPi3', cpu_temp)
+        print("CPU Info–> ", cpu)
+        print("Memory Info–>", mem_info)
+        print("Disk Info–>", disk_info)
         time.sleep(1)
 
 
