@@ -38,6 +38,7 @@ def monitordata(sid,data):#cpu,mem_info,disk_info,cpu_temp
     print("CPU Info–> ", data[0])
     print("Memory Info–>", data[1])
     print("Disk Info–>", data[2])
+    print("")
 
 @sio.on('CPU-Info3')
 def CPU(sid,load):

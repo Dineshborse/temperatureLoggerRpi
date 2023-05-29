@@ -45,6 +45,7 @@ def my_background_task():
         print("CPU Info–> ", cpu)
         print("Memory Info–>", mem_info)
         print("Disk Info–>", disk_info)
+        print("")
         time.sleep(1)
 
 
